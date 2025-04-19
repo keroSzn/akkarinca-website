@@ -5,14 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AKKARINCA TERLİK SANDALET</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gradient-to-br from-yellow-50 to-gray-100 text-gray-800">
 
   <!-- Header -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">AKKARINCA TERLİK SANDALET</h1>
-      <select id="languageSelector" class="border border-gray-300 rounded px-2 py-1">
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-wide text-gray-800">AKKARINCA TERLİK SANDALET</h1>
+      <select id="languageSelector" class="border border-gray-300 rounded px-3 py-1 text-sm focus:outline-none">
         <option value="tr">Türkçe</option>
         <option value="en">English</option>
       </select>
@@ -20,30 +25,52 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-yellow-100 py-20 px-4 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4" id="slogan">Ayaklarınızın hak ettiği konfor burada başlıyor.</h2>
-    <p class="text-lg sm:text-xl mb-6" id="description">
-      %100 el işçiliğiyle üretilmiş deri terlik ve sandaletler.
-    </p>
-    <a href="https://www.amazon.com/your-product-link" target="_blank"
-       class="bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition"
-       id="buyNow">Amazon'da Satın Al</a>
+  <section class="py-24 px-4 text-center bg-gradient-to-r from-yellow-200 via-yellow-100 to-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight" id="slogan">
+        Ayaklarınızın hak ettiği konfor burada başlıyor.
+      </h2>
+      <p class="text-xl sm:text-2xl mb-8 text-gray-700" id="description">
+        %100 el işçiliğiyle üretilmiş deri terlik ve sandaletler.
+      </p>
+      <a href="https://www.amazon.com/your-product-link" target="_blank"
+         class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition duration-300 shadow-md"
+         id="buyNow">Amazon'da Satın Al</a>
+    </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="py-12 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <h3 class="text-2xl font-semibold text-center mb-8" id="galleryTitle">Ürünlerimiz</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="images/terlik1.jpg" alt="Terlik 1" class="rounded shadow hover:scale-105 transition transform duration-300">
-        <img src="images/terlik2.jpg" alt="Terlik 2" class="rounded shadow hover:scale-105 transition transform duration-300">
-        <img src="images/terlik3.jpg" alt="Terlik 3" class="rounded shadow hover:scale-105 transition transform duration-300">
+  <!-- Product Gallery -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-3xl font-semibold text-center mb-12" id="galleryTitle">Ürünlerimiz</h3>
+      <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+          <img src="images/terlik1.jpg" alt="Terlik 1" class="rounded-t-xl object-cover h-64 w-full">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-1">Klasik Deri Terlik</h4>
+            <p class="text-sm text-gray-600">Rahatlık ve şıklığın birleşimi.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+          <img src="images/terlik2.jpg" alt="Terlik 2" class="rounded-t-xl object-cover h-64 w-full">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-1">Yazlık Sandalet</h4>
+            <p class="text-sm text-gray-600">Serin adımlar, zarif tasarım.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+          <img src="images/terlik3.jpg" alt="Terlik 3" class="rounded-t-xl object-cover h-64 w-full">
+          <div class="p-4">
+            <h4 class="font-bold text-lg mb-1">Modern Deri Terlik</h4>
+            <p class="text-sm text-gray-600">Günlük kullanım için idealdir.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 text-center text-sm text-gray-600">
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600 mt-12 border-t">
     <p id="footerText">© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır.</p>
   </footer>
 
@@ -55,7 +82,7 @@
         description: "%100 el işçiliğiyle üretilmiş deri terlik ve sandaletler.",
         buyNow: "Amazon'da Satın Al",
         galleryTitle: "Ürünlerimiz",
-        footerText: "© 2025 AKKARINCA ve TERLİK SANDALET. Tüm hakları saklıdır."
+        footerText: "© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır."
       },
       en: {
         slogan: "Comfort your feet truly deserve starts here.",
@@ -79,7 +106,6 @@
       updateText(e.target.value);
     });
 
-    // Sayfa yüklendiğinde varsayılan dili güncelle
     updateText(langSelector.value);
   </script>
 
