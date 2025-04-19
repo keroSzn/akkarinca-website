@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AKKARINCA TERLİK SANDALET – El yapımı hakiki deri terliklerle konforu yaşayın." />
+  <title>AKKARINCA TERLİK SANDALET</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 shadow-md">
+    <h1 class="text-2xl font-bold">AKKARINCA</h1>
+    <select id="languageSwitcher" class="border rounded p-1">
+      <option value="tr">TR</option>
+      <option value="en">EN</option>
+    </select>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16 px-4">
+    <h2 id="slogan" class="text-3xl md:text-4xl font-semibold mb-4">El Yapımı Hakiki Deri Terliklerle Konforu Yaşa</h2>
+    <p id="intro" class="mb-6 text-lg">AKKARINCA TERLİK SANDALET olarak el emeği ile üretilmiş deri terliklerimizle dünyaya açılıyoruz.</p>
+    <a href="https://www.amazon.com" target="_blank" id="amazonBtn"
+       class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full transition">
+      Amazon'dan Satın Al
+    </a>
+  </section>
+
+  <!-- About -->
+  <section class="bg-gray-100 py-12 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 id="aboutTitle" class="text-2xl font-semibold mb-4">Hakkımızda</h3>
+      <p id="aboutText">Yılların tecrübesiyle Konya'da kurulan AKKARINCA, hakiki deri ve el işçiliğini modern tasarımla buluşturuyor.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <p>&copy; 2025 AKKARINCA TERLİK SANDALET</p>
+  </footer>
+
+  <!-- Language Script -->
+  <script>
+    const translations = {
+      tr: {
+        slogan: "El Yapımı Hakiki Deri Terliklerle Konforu Yaşa",
+        intro: "AKKARINCA TERLİK SANDALET olarak el emeği ile üretilmiş deri terliklerimizle dünyaya açılıyoruz.",
+        amazonBtn: "Amazon'dan Satın Al",
+        aboutTitle: "Hakkımızda",
+        aboutText: "Yılların tecrübesiyle Konya'da kurulan AKKARINCA, hakiki deri ve el işçiliğini modern tasarımla buluşturuyor."
+      },
+      en: {
+        slogan: "Experience Comfort with Handmade Genuine Leather Slippers",
+        intro: "At AKKARINCA SLIPPERS, we proudly bring handcrafted leather slippers from Turkey to the world.",
+        amazonBtn: "Buy on Amazon",
+        aboutTitle: "About Us",
+        aboutText: "Founded in Konya with years of experience, AKKARINCA blends genuine leather and craftsmanship with modern design."
+      }
+    };
+
+    const switcher = document.getElementById("languageSwitcher");
+    switcher.addEventListener("change", (e) => {
+      const lang = e.target.value;
+      const t = translations[lang];
+      document.getElementById("slogan").textContent = t.slogan;
+      document.getElementById("intro").textContent = t.intro;
+      document.getElementById("amazonBtn").textContent = t.amazonBtn;
+      document.getElementById("aboutTitle").textContent = t.aboutTitle;
+      document.getElementById("aboutText").textContent = t.aboutText;
+    });
+  </script>
+
+</body>
+</html>
