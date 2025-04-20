@@ -46,11 +46,13 @@
       <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 
         <!-- Ürün Kartı 1 -->
-        <a href="product1.html" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
-          <img src="images/terlik1-bej.jpg" alt="Terlik 1" class="rounded-t-xl object-cover h-64 w-full">
-          <div class="p-4">
-            <h4 class="font-bold text-lg mb-1">Klasik Deri Sandalet</h4>
-            <p class="text-sm text-gray-600">Rahatlık ve şıklığın birleşimi.</p>
+        <a href="product1.html">
+          <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+            <img src="images/terlik1-bej.jpg" alt="Terlik 1" class="rounded-t-xl object-cover h-64 w-full">
+            <div class="p-4">
+              <h4 id="product1-title" class="font-bold text-lg mb-1">Klasik Deri Sandalet</h4>
+              <p id="product1-desc" class="text-sm text-gray-600">Rahatlık ve şıklığın birleşimi.</p>
+            </div>
           </div>
         </a>
 
@@ -58,8 +60,9 @@
         <a href="product2.html" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
           <img src="images/terlik2.jpg" alt="Terlik 2" class="rounded-t-xl object-cover h-64 w-full">
           <div class="p-4">
-            <h4 class="font-bold text-lg mb-1">Yazlık Sandalet</h4>
-            <p class="text-sm text-gray-600">Serin adımlar, zarif tasarım.</p>
+            <h4 id="product2-title" class="font-bold text-lg mb-1">Yazlık Sandalet</h4>
+            <p id="product2-desc" class="text-sm text-gray-600">Serin adımlar, zarif tasarım.</p>
+
           </div>
         </a>
 
@@ -67,8 +70,8 @@
         <a href="product3.html" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
           <img src="images/şekermest.jpg" alt="Terlik 3" class="rounded-t-xl object-cover h-64 w-full">
           <div class="p-4">
-            <h4 class="font-bold text-lg mb-1">Modern Deri Mest</h4>
-            <p class="text-sm text-gray-600">Günlük kullanım için idealdir.</p>
+            <h4 id="product3-title" class="font-bold text-lg mb-1">Modern Deri Mest</h4>
+            <p id="product3-desc" class="text-sm text-gray-600">Günlük kullanım için idealdir.</p>
           </div>
         </a>
 
@@ -86,19 +89,26 @@
     const languageContent = {
       tr: {
         slogan: "Ayaklarınızın hak ettiği konfor burada başlıyor.",
-        description: "%100 el işçiliğiyle üretilmiş deri terlik, sandaletler ve mestler.",
+        description: "%100 el işçiliğiyle üretilmiş deri terlik ve sandaletler.",
         buyNow: "Amazon'da Satın Al",
         galleryTitle: "Ürünlerimiz",
-        footerText: "© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır."
+        footerText: "© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır.",
+        product1: { title: "Klasik Deri Sandalet", desc: "Rahatlık ve şıklığın birleşimi." },
+        product2: { title: "Yazlık Sandalet", desc: "Serin adımlar, zarif tasarım." },
+        product3: { title: "Modern Deri Mest", desc: "Günlük kullanım için idealdir." }
       },
       en: {
         slogan: "Comfort your feet truly deserve starts here.",
-        description: "100% handmade leather slippers, sandals and mest.",
+        description: "100% handmade leather slippers and sandals.",
         buyNow: "Buy on Amazon",
         galleryTitle: "Our Products",
-        footerText: "© 2025 AKKARINCA SLIPPERS. All rights reserved."
+        footerText: "© 2025 AKKARINCA SLIPPERS. All rights reserved.",
+        product1: { title: "Classic Leather Sandal", desc: "Where elegance meets comfort." },
+        product2: { title: "Summer Sandal", desc: "Cool steps, elegant design." },
+        product3: { title: "Modern Leather Mest", desc: "Perfect for daily use." }
       }
     };
+    
 
     const langSelector = document.getElementById("languageSelector");
 
@@ -108,6 +118,13 @@
       document.getElementById("buyNow").textContent = languageContent[lang].buyNow;
       document.getElementById("galleryTitle").textContent = languageContent[lang].galleryTitle;
       document.getElementById("footerText").textContent = languageContent[lang].footerText;
+      document.getElementById("product1-title").textContent = languageContent[lang].product1.title;
+      document.getElementById("product1-desc").textContent = languageContent[lang].product1.desc;
+      document.getElementById("product2-title").textContent = languageContent[lang].product2.title;
+      document.getElementById("product2-desc").textContent = languageContent[lang].product2.desc;
+      document.getElementById("product3-title").textContent = languageContent[lang].product3.title;
+      document.getElementById("product3-desc").textContent = languageContent[lang].product3.desc;
+
     }
 
     // Kullanıcı dilini localStorage'dan al
