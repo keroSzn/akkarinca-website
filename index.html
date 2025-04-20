@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AKKARINCA TERLİK SANDALET</title>
+  <title>AKKARINCA TERLİK SANDALET ve MEST</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
@@ -16,7 +16,7 @@
   <!-- Header -->
   <header class="bg-white shadow-lg sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-wide text-gray-800">AKKARINCA TERLİK SANDALET</h1>
+      <h1 class="text-2xl font-bold tracking-wide text-gray-800">AKKARINCA TERLİK SANDALET ve MEST</h1>
       <select id="languageSelector" class="border border-gray-300 rounded px-3 py-1 text-sm focus:outline-none">
         <option value="tr">Türkçe</option>
         <option value="en">English</option>
@@ -31,7 +31,7 @@
         Ayaklarınızın hak ettiği konfor burada başlıyor.
       </h2>
       <p class="text-xl sm:text-2xl mb-8 text-gray-700" id="description">
-        %100 el işçiliğiyle üretilmiş deri terlik ve sandaletler.
+        %100 el işçiliğiyle üretilmiş deri terlik, sandaletler ve mestler.
       </p>
       <a href="https://www.amazon.com/your-product-link" target="_blank"
          class="bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition duration-300 shadow-md"
@@ -44,27 +44,34 @@
     <div class="max-w-7xl mx-auto">
       <h3 class="text-3xl font-semibold text-center mb-12" id="galleryTitle">Ürünlerimiz</h3>
       <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
-          <img src="images/terlik1.jpg" alt="Terlik 1" class="rounded-t-xl object-cover h-64 w-full">
+
+        <!-- Ürün Kartı 1 -->
+        <a href="product1.html" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+          <img src="images/terlik1-bej.jpg" alt="Terlik 1" class="rounded-t-xl object-cover h-64 w-full">
           <div class="p-4">
-            <h4 class="font-bold text-lg mb-1">Klasik Deri Terlik</h4>
+            <h4 class="font-bold text-lg mb-1">Klasik Deri Sandalet</h4>
             <p class="text-sm text-gray-600">Rahatlık ve şıklığın birleşimi.</p>
           </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+        </a>
+
+        <!-- Ürün Kartı 2 -->
+        <a href="product2.html" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
           <img src="images/terlik2.jpg" alt="Terlik 2" class="rounded-t-xl object-cover h-64 w-full">
           <div class="p-4">
             <h4 class="font-bold text-lg mb-1">Yazlık Sandalet</h4>
             <p class="text-sm text-gray-600">Serin adımlar, zarif tasarım.</p>
           </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
-          <img src="images/terlik3.jpg" alt="Terlik 3" class="rounded-t-xl object-cover h-64 w-full">
+        </a>
+
+        <!-- Ürün Kartı 3 -->
+        <a href="product3.html" class="block bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300">
+          <img src="images/şekermest.jpg" alt="Terlik 3" class="rounded-t-xl object-cover h-64 w-full">
           <div class="p-4">
-            <h4 class="font-bold text-lg mb-1">Modern Deri Terlik</h4>
+            <h4 class="font-bold text-lg mb-1">Modern Deri Mest</h4>
             <p class="text-sm text-gray-600">Günlük kullanım için idealdir.</p>
           </div>
-        </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -79,14 +86,14 @@
     const languageContent = {
       tr: {
         slogan: "Ayaklarınızın hak ettiği konfor burada başlıyor.",
-        description: "%100 el işçiliğiyle üretilmiş deri terlik ve sandaletler.",
+        description: "%100 el işçiliğiyle üretilmiş deri terlik, sandaletler ve mestler.",
         buyNow: "Amazon'da Satın Al",
         galleryTitle: "Ürünlerimiz",
         footerText: "© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır."
       },
       en: {
         slogan: "Comfort your feet truly deserve starts here.",
-        description: "100% handmade leather slippers and sandals.",
+        description: "100% handmade leather slippers, sandals and mest.",
         buyNow: "Buy on Amazon",
         galleryTitle: "Our Products",
         footerText: "© 2025 AKKARINCA SLIPPERS. All rights reserved."
@@ -94,19 +101,26 @@
     };
 
     const langSelector = document.getElementById("languageSelector");
-    const updateText = (lang) => {
+
+    function updateText(lang) {
       document.getElementById("slogan").textContent = languageContent[lang].slogan;
       document.getElementById("description").textContent = languageContent[lang].description;
       document.getElementById("buyNow").textContent = languageContent[lang].buyNow;
       document.getElementById("galleryTitle").textContent = languageContent[lang].galleryTitle;
       document.getElementById("footerText").textContent = languageContent[lang].footerText;
-    };
+    }
 
+    // Kullanıcı dilini localStorage'dan al
+    const storedLang = localStorage.getItem("lang") || "tr";
+    langSelector.value = storedLang;
+    updateText(storedLang);
+
+    // Dil değişince kaydet ve uygula
     langSelector.addEventListener("change", (e) => {
-      updateText(e.target.value);
+      const selectedLang = e.target.value;
+      localStorage.setItem("lang", selectedLang);
+      updateText(selectedLang);
     });
-
-    updateText(langSelector.value);
   </script>
 
 </body>

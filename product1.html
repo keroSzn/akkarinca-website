@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klasik Deri Sandalet</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-yellow-50 to-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
+      <h1 class="text-xl sm:text-2xl font-bold tracking-wide text-gray-800" id="productTitleHeader">Klasik Deri Sandalet</h1>
+      <select id="languageSelector" class="border border-gray-300 rounded px-3 py-1 text-sm focus:outline-none">
+        <option value="tr">Türkçe</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <section class="py-16 px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex">
+      <img id="productImage" class="h-96 w-full md:w-1/2 object-cover" src="images/terlik1-bej.jpg" alt="Klasik Deri Sandalet">
+      <div class="p-8 md:w-1/2 flex flex-col justify-center">
+        <h2 class="text-3xl font-bold mb-4" id="productTitle">Klasik Deri Sandalet</h2>
+        <p class="text-gray-700 text-lg mb-6" id="productDesc">
+          Günlük kullanım için ideal, %100 deri ve el yapımı sandalet.
+        </p>
+
+        <!-- Renk Seçimi -->
+        <div class="mb-4">
+          <label for="colorSelector" class="block mb-2 text-sm font-medium text-gray-700" id="colorLabel">Renk Seçin:</label>
+          <select id="colorSelector" class="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none">
+            <option value="bej">Bej</option>
+            <option value="krem">Krem</option>
+            <option value="siyah">Siyah</option>
+            <option value="kahve">Kahve</option>
+          </select>
+        </div>
+
+        <a href="https://www.amazon.com/your-product-link" target="_blank"
+           class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 text-center w-fit mb-4"
+           id="buyNow">Amazon'da Satın Al</a>
+        <a href="index.html"
+           class="text-blue-600 hover:underline text-sm font-medium transition duration-200"
+           id="goBack">← Geri Dön</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8 text-center text-sm text-gray-600 mt-12 border-t">
+    <p id="footerText">© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const languageContent = {
+      tr: {
+        productTitle: "Klasik Deri Sandalet",
+        productDesc: "Günlük kullanım için ideal, %100 deri ve el yapımı sandalet.",
+        buyNow: "Amazon'da Satın Al",
+        footerText: "© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır.",
+        headerTitle: "Klasik Deri Sandalet",
+        colorLabel: "Renk Seçin:",
+        goBack: "← Geri Dön"
+      },
+      en: {
+        productTitle: "Classic Leather Sandal",
+        productDesc: "100% leather and handmade sandal, perfect for everyday wear.",
+        buyNow: "Buy on Amazon",
+        footerText: "© 2025 AKKARINCA SLIPPERS. All rights reserved.",
+        headerTitle: "Classic Leather Sandal",
+        colorLabel: "Choose Color:",
+        goBack: "← Back"
+      }
+    };
+
+    const langSelector = document.getElementById("languageSelector");
+    const productImage = document.getElementById("productImage");
+    const colorSelector = document.getElementById("colorSelector");
+
+    function updateText(lang) {
+      const content = languageContent[lang];
+      document.getElementById("productTitle").textContent = content.productTitle;
+      document.getElementById("productDesc").textContent = content.productDesc;
+      document.getElementById("buyNow").textContent = content.buyNow;
+      document.getElementById("footerText").textContent = content.footerText;
+      document.getElementById("productTitleHeader").textContent = content.headerTitle;
+      document.getElementById("colorLabel").textContent = content.colorLabel;
+      document.getElementById("goBack").textContent = content.goBack;
+    }
+
+    // Dil ayarı
+    const storedLang = localStorage.getItem("lang") || "tr";
+    langSelector.value = storedLang;
+    updateText(storedLang);
+
+    langSelector.addEventListener("change", (e) => {
+      const selectedLang = e.target.value;
+      localStorage.setItem("lang", selectedLang);
+      updateText(selectedLang);
+    });
+
+    // Renk değişimi
+    colorSelector.addEventListener("change", (e) => {
+      const selectedColor = e.target.value;
+      productImage.src = `images/terlik1-${selectedColor}.jpg`;
+    });
+  </script>
+
+</body>
+</html>
