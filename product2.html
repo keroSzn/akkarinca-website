@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Klasik Deri Sandalet</title>
+  <title>Çift Tokalı Deri Sandalet</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-yellow-50 to-gray-100 text-gray-800">
+<body class="bg-gradient-to-br from-pink-50 to-gray-100 text-gray-800">
 
   <!-- Header -->
   <header class="bg-white shadow-lg sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-5 flex justify-between items-center">
-      <h1 class="text-xl sm:text-2xl font-bold tracking-wide text-gray-800" id="productTitleHeader">Klasik Deri Sandalet</h1>
+      <h1 class="text-xl sm:text-2xl font-bold tracking-wide text-gray-800" id="productTitleHeader">Çift Tokalı Deri Sandalet</h1>
       <select id="languageSelector" class="border border-gray-300 rounded px-3 py-1 text-sm focus:outline-none">
         <option value="tr">Türkçe</option>
         <option value="en">English</option>
@@ -22,20 +22,12 @@
   <!-- Product Section -->
   <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden md:flex">
-      <img id="productImage" class="h-96 w-full md:w-1/2 object-cover" src="images/terlik1-bej.jpg" alt="Klasik Deri Sandalet">
+      <img id="productImage" class="h-96 w-full md:w-1/2 object-cover" src="images/terlik2.jpg" alt="Çift Tokalı Deri Sandalet">
       <div class="p-8 md:w-1/2 flex flex-col justify-center">
-        <h2 class="text-3xl font-bold mb-4" id="productTitle">Klasik Deri Sandalet</h2>
+        <h2 class="text-3xl font-bold mb-4" id="productTitle">Çift Tokalı Deri Sandalet</h2>
         <p class="text-gray-700 text-lg mb-6" id="productDesc">
-          Günlük kullanım için ideal, %100 deri ve el yapımı sandalet.
+          Doğal deri malzemeden üretilmiş, ergonomik ve rahat çift tokalı sandalet.
         </p>
-
-        <!-- Görsel Renk Seçimi -->
-        <div class="flex gap-2 mb-6">
-          <img src="images/terlik1-bej.jpg" class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-black selected-image" onclick="changeImage(this, 'bej')">
-          <img src="images/terlik1-krem.jpg" class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-gray-300 hover:border-black" onclick="changeImage(this, 'krem')">
-          <img src="images/terlik1-siyah.jpg" class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-gray-300 hover:border-black" onclick="changeImage(this, 'siyah')">
-          <img src="images/terlik1-kahve.jpg" class="w-20 h-20 object-cover rounded cursor-pointer border-2 border-gray-300 hover:border-black" onclick="changeImage(this, 'kahve')">
-        </div>
 
         <a href="https://www.amazon.com/your-product-link" target="_blank"
            class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 text-center w-fit mb-4"
@@ -53,23 +45,22 @@
   <script>
     const languageContent = {
       tr: {
-        productTitle: "Klasik Deri Sandalet",
-        productDesc: "Günlük kullanım için ideal, %100 deri ve el yapımı sandalet.",
+        productTitle: "Çift Tokalı Deri Sandalet",
+        productDesc: "Doğal deri malzemeden üretilmiş, ergonomik ve rahat çift tokalı sandalet.",
         buyNow: "Amazon'da Satın Al",
         footerText: "© 2025 AKKARINCA TERLİK SANDALET. Tüm hakları saklıdır.",
-        headerTitle: "Klasik Deri Sandalet"
+        headerTitle: "Çift Tokalı Deri Sandalet"
       },
       en: {
-        productTitle: "Classic Leather Sandal",
-        productDesc: "100% leather and handmade sandal, perfect for everyday wear.",
+        productTitle: "Double-Buckled Leather Sandals",
+        productDesc: "Ergonomic and comfortable double-buckled sandals made of genuine leather.",
         buyNow: "Buy on Amazon",
         footerText: "© 2025 AKKARINCA SLIPPERS. All rights reserved.",
-        headerTitle: "Classic Leather Sandal"
+        headerTitle: "Double-Buckled Leather Sandals"
       }
     };
 
     const langSelector = document.getElementById("languageSelector");
-    const productImage = document.getElementById("productImage");
 
     function updateText(lang) {
       const content = languageContent[lang];
@@ -80,7 +71,7 @@
       document.getElementById("productTitleHeader").textContent = content.headerTitle;
     }
 
-    // Başlangıçta dili ayarla
+    // Başlangıç dili
     const storedLang = localStorage.getItem("lang") || "tr";
     langSelector.value = storedLang;
     updateText(storedLang);
@@ -90,19 +81,6 @@
       localStorage.setItem("lang", selectedLang);
       updateText(selectedLang);
     });
-
-    function changeImage(element, color) {
-      productImage.src = `images/terlik1-${color}.jpg`;
-
-      document.querySelectorAll('.selected-image').forEach(img => {
-        img.classList.remove('border-black');
-        img.classList.remove('selected-image');
-        img.classList.add('border-gray-300');
-      });
-
-      element.classList.remove('border-gray-300');
-      element.classList.add('border-black', 'selected-image');
-    }
   </script>
 
 </body>
